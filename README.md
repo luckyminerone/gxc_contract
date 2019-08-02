@@ -1,9 +1,9 @@
 # gxc_contract
 gxchain contract code
 
-合约接口
-1. mine
-用户投注
+--合约接口
+-1. mine
+--用户投注
 
 /* 
  * @playable: true
@@ -26,8 +26,8 @@ gxchain contract code
  
 void mine(std::string strbet)
 
-2. issueprize
-分批发奖,用户太多的话，一次性发奖可能导致合约执行超时而发奖失败
+-2. issueprize
+--分批发奖,用户太多的话，一次性发奖可能导致合约执行超时而发奖失败
 
 /*
  * @playable: false
