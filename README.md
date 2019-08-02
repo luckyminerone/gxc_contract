@@ -1,9 +1,11 @@
 # gxc_contract
 gxchain contract code
 
---合约接口
--1. mine
---用户投注
+合约接口
+
+1. mine
+
+用户投注
 
 /* 
  * @playable: true
@@ -22,18 +24,21 @@ gxchain contract code
  * 即 floor(parseFloat(strFloat)*1e5) 是对应的带精度的资产金额
  * @example 
  * mine("1,2.00,3.000001,0.4"); // 该资产每种矿石分别投注 1 2 3 0.4 
+ 
  */
  
 void mine(std::string strbet)
 
--2. issueprize
---分批发奖,用户太多的话，一次性发奖可能导致合约执行超时而发奖失败
+2. issueprize
+
+分批发奖,用户太多的话，一次性发奖可能导致合约执行超时而发奖失败
 
 /*
  * @playable: false
  * @permission: anyone, 合约自动控制开奖，不怕用户作弊，只需要有人调用合约执行开奖和发奖流程
  * @param num 发不超过 num 个用户的奖金(即使用户中奖为0也算一个)，-1 表示发所有可发的
  * 特点，若实发奖的数量为 0， 则返回 ERROR_NO_ERROR, 主动使合约失败
+ 
  **/
  
 void issueprize(int64_t num)
