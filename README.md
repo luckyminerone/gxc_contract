@@ -13,8 +13,8 @@ gxchain contract code
  *  + 附带的资产大于 0
  *  + 附带的资产必须等于各矿石投注之和
  *  + 附带的资产必须在 prizepool 中存在
- *        且每种矿石若投注则必须大于等于 bet_limit 中对应的值
- *        该局每种矿石的总投注必须小于等于 total_limit 中对应的值
+ *     且每种矿石若投注则必须大于等于 bet_limit 中对应的值
+ *     该局每种矿石的总投注必须小于等于 total_limit 中对应的值
  *  + 投注区块号在该局前 15 个 (block_num%20<15)
  *
  * 可能存在的问题，目前 GXC 资产都是精度都是 5 (GXC目前不支持创建时设置资产精度)
@@ -23,7 +23,9 @@ gxchain contract code
  * @example 
  * mine("1,2.00,3.000001,0.4"); // 该资产每种矿石分别投注 1 2 3 0.4 
  */
+ 
 void mine(std::string strbet)
+
 2. issueprize
 分批发奖,用户太多的话，一次性发奖可能导致合约执行超时而发奖失败
 
@@ -33,4 +35,5 @@ void mine(std::string strbet)
  * @param num 发不超过 num 个用户的奖金(即使用户中奖为0也算一个)，-1 表示发所有可发的
  * 特点，若实发奖的数量为 0， 则返回 ERROR_NO_ERROR, 主动使合约失败
  **/
+ 
 void issueprize(int64_t num)
